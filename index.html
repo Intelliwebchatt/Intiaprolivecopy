@@ -22,11 +22,11 @@
         :root {
             --primary-color: #003366;
             --secondary-color: #6699cc;
-            --text-color: #333;
+            --text-color: #222; /* Darker text color for better contrast */
             --background-color: #f9f9f9;
             --highlight-color: #ff0000;
             --button-color: #ff9900;
-            --button-text-color: #fff;
+            --button-text-color: #000; /* Change button text to black for better contrast */
             --header-gradient: linear-gradient(135deg, #004080, #001f4d);
         }
 
@@ -117,8 +117,8 @@
         }
 
         .cta button {
-            background-color: #FF9900; /* brighter background */
-            color: #000; /* darker text for better contrast */
+            background-color: #FF9900; /* Brighter button background */
+            color: var(--button-text-color); /* Darker text for better contrast */
             padding: 1rem 2rem;
             border: none;
             border-radius: 8px;
@@ -129,7 +129,7 @@
         }
 
         .cta button:hover {
-            background-color: #FF4500; /* darker hover */
+            background-color: #FF4500; /* Darker hover background */
         }
 
         #contact-form {
@@ -242,14 +242,14 @@
         <section class="section cta">
             <h2>Why Choose Intelliai Pro Series?</h2>
             <p>No recurring fees, just a one-time payment of $199. Optional updates available for a $50 service fee.</p>
-            <button onclick="window.location.href='#contact'">Get Started Today!</button>
+            <button onclick
+
+                <button onclick="window.location.href='#contact'">Get Started Today!</button>
         </section>
 
         <section id="contact" class="section">
             <h2>Contact Us</h2>
-            <p>Have questions or want to check development time? Typically, our turnaround is 3 days, but it can vary based on demand. Contact us below to receive an estimated timeline
-
-               before finalizing your payment.</p>
+            <p>Have questions or want to check development time? Typically, our turnaround is 3 days, but it can vary based on demand. Contact us below to receive an estimated timeline before finalizing your payment.</p>
 
             <!-- Contact Form -->
             <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
@@ -277,6 +277,7 @@
             <p>© 2024 Intelliai Pro Series | <a href="#">Privacy Policy</a></p>
         </footer>
     </main>
+
 </body>
 
-</html> 
+</html>
