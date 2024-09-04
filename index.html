@@ -27,8 +27,11 @@
             padding: 0;
         }
 
-        .highlight {
-            color: #e60000;
+        header {
+            background-color: #003366; /* Dark blue background for better contrast */
+            padding: 30px;
+            text-align: center;
+            color: #fff; /* White text for contrast */
         }
 
         header img {
@@ -36,16 +39,85 @@
             height: auto;
         }
 
+        h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+
+        .highlight {
+            color: #e60000; /* Red to highlight the offer */
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .feature {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
         button {
             background-color: #007BFF;
             color: #fff; /* Better contrast for accessibility */
-            padding: 10px 20px;
+            padding: 15px 25px;
             border: none;
             cursor: pointer;
+            font-size: 1.2em;
+            border-radius: 30px; /* Rounded button */
         }
 
         button:hover {
             background-color: #0056b3;
+        }
+
+        /* Contact form */
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        form button {
+            width: 100%;
+            background-color: #28a745; /* Green for action */
+        }
+
+        form button:hover {
+            background-color: #218838;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
         }
     </style>
 
@@ -96,6 +168,10 @@
             </form>
         </section>
     </main>
+
+    <footer>
+        &copy; 2024 Intelliai Pro Series | <a href="#" style="color: #fff;">Privacy Policy</a>
+    </footer>
 
     <!-- Defer Non-Critical JavaScript -->
     <script src="script.js" defer></script>
