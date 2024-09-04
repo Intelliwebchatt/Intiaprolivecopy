@@ -12,10 +12,11 @@
     <!-- Preload Header Image -->
     <link rel="preload" as="image" href="https://github.com/Intelliwebchatt/Bclandingbot199/blob/f1fc1a3578330f2336d45addfb0874510c98a079/1000043438.png?raw=true">
 
-    <!-- Font Preload -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Preconnect to optimize font loading -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    
+
     <!-- Inline Critical CSS -->
     <style>
         :root {
@@ -51,6 +52,7 @@
             max-height: 500px;
             object-fit: cover;
             display: block;
+            loading: lazy;
         }
 
         header h1 {
@@ -173,6 +175,7 @@
             width: 200px;
             height: 200px;
             margin: 0 auto;
+            loading: lazy;
         }
 
         footer {
@@ -207,7 +210,7 @@
 <body>
     <header>
         <!-- Header Image -->
-        <img src="https://github.com/Intelliwebchatt/Bclandingbot199/blob/f1fc1a3578330f2336d45addfb0874510c98a079/1000043438.png?raw=true" alt="Intelliai Pro Series Banner" width="1920" height="500">
+        <img src="https://github.com/Intelliwebchatt/Bclandingbot199/blob/f1fc1a3578330f2336d45addfb0874510c98a079/1000043438.png?raw=true" alt="Intelliai Pro Series Banner" width="1920" height="500" loading="lazy">
         <h1>Introducing the Intelliai Pro Series</h1>
         <p class="highlight">Limited Time Offer: $199 Only</p>
         <p>Boost your online presence with a professionally crafted landing page and advanced chatbot technology, all at an unbeatable price.</p>
@@ -227,9 +230,8 @@
                 </div>
                 <div class="feature">
                     <h3>2 Years Free Maintenance</h3>
-                    <p>Enjoy premium support: Your site and chatbot are maintained at no cost for the first 2 years.</p
-                                                                                                                        
-    </div>
+                    <p>Enjoy premium support: Your site and chatbot are maintained at no cost for the first 2 years.</p>
+                </div>
             </div>
         </section>
 
@@ -239,7 +241,9 @@
             <button onclick="window.location.href='#contact'">Get Started Today!</button>
         </section>
 
-        <section id="contact" class="section">
+        <section id="
+
+            contact" class="section">
             <h2>Contact Us</h2>
             <p>Have questions or want to check development time? Typically, our turnaround is 3 days, but it can vary based on demand. Contact us below to receive an estimated timeline before finalizing your payment.</p>
 
@@ -258,7 +262,7 @@
             <!-- QR Code Section -->
             <div class="qr-code">
                 <h3>Support Us via PayPal</h3>
-                <img src="https://github.com/Intelliwebchatt/Bclandingbot199/blob/546f53913158d26e336a43e847955cf4b9a4e290/qrcode.png?raw=true" alt="Support Us via PayPal QR Code">
+                <img src="https://github.com/Intelliwebchatt/Bclandingbot199/blob/546f53913158d26e336a43e847955cf4b9a4e290/qrcode.png?raw=true" alt="Support Us via PayPal QR Code" loading="lazy">
             </div>
         </section>
 
