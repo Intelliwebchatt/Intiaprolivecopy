@@ -5,267 +5,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intelliai Pro Series | $199 Limited Time Offer</title>
-    
+
     <!-- Meta Description for SEO -->
     <meta name="description" content="Boost your online presence with Intelliai Pro Series. Get a custom landing page and advanced chatbot for just $199. Limited time offer!">
-    
+
     <!-- Preload Header Image -->
-    <link rel="preload" as="image" href="https://github.com/Intelliwebchatt/Bclandingbot199/blob/f1fc1a3578330f2336d45addfb0874510c98a079/1000043438.png?raw=true">
+    <link rel="preload" as="image" href="https://github.com/Intelliwebchatt/Bclandingbot199/blob/f1fc1a3578330f2336d45addfb0874510c98a079/1000043438.png?raw=true" media="(max-width: 767px)">
 
     <!-- Font Preload -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" as="style" onload="this.rel='stylesheet'">
+
     <!-- Inline Critical CSS -->
     <style>
-        :root {
-            --primary-color: #003366;
-            --secondary-color: #6699cc;
-            --text-color: #333;
-            --background-color: #f9f9f9;
-            --highlight-color: #ff0000;
-            --button-color: #ff9900;
-            --header-gradient: linear-gradient(135deg, #004080, #001f4d);
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background: var(--header-gradient);
-            color: white;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-bottom: 5px solid #001f4d;
-        }
-
-        header img {
-            width: 100%;
-            height: auto;
-            max-height: 500px;
-            object-fit: cover;
-            display: block;
-        }
-
-        header h1 {
-            font-size: 2.8rem;
-            margin: 1rem 0;
-        }
-
-        header p {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        header .highlight {
-            color: var(--highlight-color);
-            font-weight: bold;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-
-        .section {
-            background-color: white;
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-
-        .feature {
-            flex: 1 1 30%;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .feature h3 {
-            margin-bottom: 0.5rem;
-            color: var(--secondary-color);
-        }
-
-        .cta {
-            text-align: center;
-            margin-top: 2rem;
-        }
-
-        .cta button {
-            background-color: var(--button-color);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .cta button:hover {
-            background-color: var(--highlight-color);
-        }
-
-        #contact-form {
-            background-color: var(--background-color);
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        #contact-form input,
-        #contact-form textarea {
-            width: 100%;
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            color: #333;
-            margin-bottom: 0.75rem;
-        }
-
-        #contact-form button[type="submit"] {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-            display: block;
-            margin: 0 auto;
-        }
-
-        #contact-form button[type="submit"]:hover {
-            background-color: #002244;
-        }
-
-        .qr-code {
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .qr-code img {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto;
-        }
-
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-            margin-top: 2rem;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .features {
-                flex-direction: column;
-            }
-
-            .feature {
-                margin-bottom: 1rem;
-            }
-        }
+        /* Critical CSS goes here */
     </style>
 
-    <!-- Load non-critical JS after page load -->
-    <script defer src="https://app.aminos.ai/js/chat_plugin.js" data-bot-id="33247"></script>
-
+    <!-- Defer Non-Critical CSS -->
+    <link rel="preload" as="style" href="styles.css" onload="this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="styles.css">
+    </noscript>
 </head>
 
 <body>
     <header>
-        <!-- Header Image -->
-        <img src="https://github.com/Intelliwebchatt/Bclandingbot199/blob/f1fc1a3578330f2336d45addfb0874510c98a079/1000043438.png?raw=true" alt="Intelliai Pro Series Banner" width="1920" height="500">
-        <h1>Introducing the Intelliai Pro Series</h1>
-        <p class="highlight">Limited Time Offer: $199 Only</p>
-        <p>Boost your online presence with a professionally crafted landing page and advanced chatbot technology, all at an unbeatable price.</p>
+        <img src="https://github.com/Intelliwebchatt/Bclandingbot199/blob/f1fc1a3578330f2336d45addfb0874510c98a079/1000043438.png?raw=true" alt="Intelliai Pro Series" loading="eager">
+        <h1>Intelliai Pro Series <span class="highlight">$199</span> Limited Time Offer</h1>
+        <p>Get a custom landing page and advanced chatbot</p>
     </header>
 
     <main>
         <section class="section">
-            <h2>What's Included</h2>
+            <h2>Key Features</h2>
             <div class="features">
                 <div class="feature">
                     <h3>Custom Landing Page</h3>
-                    <p>Receive a digital business card-style landing page, meticulously designed using HTML, CSS, and JavaScript. Optimized for speed and SEO.</p>
+                    <p>Get a professionally designed landing page tailored to your business needs.</p>
                 </div>
                 <div class="feature">
                     <h3>Advanced Chatbot</h3>
-                    <p>Get Intellichat, a cutting-edge GPT-4 chatbot tailored to your data, seamlessly integrated into your site.</p>
+                    <p>Engage with customers 24/7 using our advanced chatbot technology.</p>
                 </div>
                 <div class="feature">
-                    <h3>2 Years Free Maintenance</h3>
-                    <p>Enjoy premium support: Your site and chatbot are maintained at no cost for the first 2 years.</p
-                                                                                                                        
-    </div>
+                    <h3>Analytics & Insights</h3>
+                    <p>Track visitor behavior and gain valuable insights for optimizing your online presence.</p>
+                </div>
             </div>
         </section>
 
-        <section class="section cta">
-            <h2>Why Choose Intelliai Pro Series?</h2>
-            <p>No recurring fees, just a one-time payment of $199. Optional updates available for a $50 service fee.</p>
-            <button onclick="window.location.href='#contact'">Get Started Today!</button>
+        <section class="cta">
+            <button>Get Started Now</button>
         </section>
 
-        <section id="contact" class="section">
+        <section class="section">
             <h2>Contact Us</h2>
-            <p>Have questions or want to check development time? Typically, our turnaround is 3 days, but it can vary based on demand. Contact us below to receive an estimated timeline before finalizing your payment.</p>
-
-            <!-- Contact Form -->
-            <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                <input type="hidden" name="form-name" value="contact">
-                <p class="hidden">
-                    <label>Don’t fill this out if you're human: <input name="bot-field"></label>
-                </p>
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
+            <form id="contact-form">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" rows="4" required></textarea>
+                <button type="submit">Submit</button>
             </form>
-
-            <!-- QR Code Section -->
-            <div class="qr-code">
-                <h3>Support Us via PayPal</h3>
-                <img src="https://github.com/Intelliwebchatt/Bclandingbot199/blob/546f53913158d26e336a43e847955cf4b9a4e290/qrcode.png?raw=true" alt="Support Us via PayPal QR Code">
-            </div>
         </section>
-
-        <footer>
-            <p>© 2024 Intelliai Pro Series | <a href="#">Privacy Policy</a></p>
-        </footer>
     </main>
+
+    <!-- Defer Non-Critical JavaScript -->
+    <script src="script.js" defer></script>
 </body>
 
 </html>
