@@ -26,7 +26,7 @@
             --background-color: #f9f9f9;
             --highlight-color: #ff0000;
             --button-color: #ff9900;
-            --button-text-color: #fff; /* Improved contrast */
+            --button-text-color: #fff;
             --header-gradient: linear-gradient(135deg, #004080, #001f4d);
         }
 
@@ -117,8 +117,8 @@
         }
 
         .cta button {
-            background-color: var(--button-color);
-            color: var(--button-text-color);
+            background-color: #FF9900; /* brighter background */
+            color: #000; /* darker text for better contrast */
             padding: 1rem 2rem;
             border: none;
             border-radius: 8px;
@@ -129,7 +129,7 @@
         }
 
         .cta button:hover {
-            background-color: var(--highlight-color);
+            background-color: #FF4500; /* darker hover */
         }
 
         #contact-form {
@@ -247,13 +247,14 @@
 
         <section id="contact" class="section">
             <h2>Contact Us</h2>
-            <p>Have questions or want to check development time? Typically, our turnaround is 3 days, but it can vary based on demand. Contact us below to receive an estimated timeline before finalizing your payment.</p>
+            <p>Have questions or want to check development time? Typically, our turnaround is 3 days, but it can vary based on demand. Contact us below to receive an estimated timeline
+
+               before finalizing your payment.</p>
 
             <!-- Contact Form -->
             <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                 <input type="hidden" name="form-name" value="contact">
                 <p class="hidden">
-
                     <label>Don’t fill this out if you're human: <input name="bot-field"></label>
                 </p>
                 <input type="text" name="name" placeholder="Your Name" required>
@@ -278,4 +279,4 @@
     </main>
 </body>
 
-</html>
+</html> 
