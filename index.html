@@ -4,39 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intelliai Pro Series | $199 Limited Time Offer</title>
+    <title>Intelliai Pro Series | News Feed Integration</title>
 
     <!-- Meta Description for SEO -->
     <meta name="description" content="Boost your online presence with Intelliai Pro Series. Get a custom landing page and advanced chatbot for just $199. Limited time offer!">
 
-    <!-- Meta Robots Tag -->
-    <meta name="robots" content="index, follow">
-
-    <!-- Canonical Tag to avoid duplicate content issues -->
-    <link rel="canonical" href="https://www.yoursite.com/your-page-url">
-
-    <!-- Structured Data (Organization Schema) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Intelliai Pro Series",
-        "url": "https://www.yoursite.com",
-        "logo": "https://www.yoursite.com/logo.png",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+1-800-555-5555",
-            "contactType": "Customer Support"
-        }
-    }
-    </script>
-
-    <!-- Preload Header Image in WebP Format -->
+    <!-- Preload Header Image -->
     <link rel="preload" as="image" href="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/ff04667d963c9413c40fb81354f3e5b24c3bf27d/1000043438.webp" type="image/webp">
 
     <!-- Preconnect and Preload Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
     <!-- Inline Critical CSS -->
@@ -46,10 +23,6 @@
             --secondary-color: #6699cc;
             --text-color: #222;
             --background-color: #f9f9f9;
-            --highlight-color: #ff0000;
-            --button-color: #ff9900;
-            --button-text-color: #000;
-            --header-gradient: linear-gradient(135deg, #004080, #001f4d);
         }
 
         body {
@@ -62,35 +35,15 @@
         }
 
         header {
-            background: var(--header-gradient);
+            background: var(--primary-color);
             color: white;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-bottom: 5px solid #001f4d;
-        }
-
-        header img {
-            width: 100%;
-            height: auto;
-            max-height: 500px;
-            object-fit: cover;
-            display: block;
-            loading: lazy;
+            padding: 1rem 0;
         }
 
         header h1 {
-            font-size: 2.8rem;
-            margin: 1rem 0;
-        }
-
-        header p {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        header .highlight {
-            color: var(--highlight-color);
-            font-weight: bold;
+            font-size: 2.5rem;
+            margin: 0;
         }
 
         main {
@@ -99,205 +52,92 @@
             padding: 2rem 1rem;
         }
 
-        .section {
-            background-color: white;
+        .news-section {
+            background-color: #fff;
+            padding: 1rem;
+            margin: 1rem 0;
             border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        h2 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            text-align: center;
+        .news-article {
+            margin-bottom: 1.5rem;
         }
 
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-
-        .feature {
-            flex: 1 1 30%;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .feature h3 {
+        .news-article h2 {
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .news-article p {
+            font-size: 1rem;
+        }
+
+        .news-article a {
+            display: inline-block;
+            margin-top: 0.5rem;
             color: var(--secondary-color);
+            text-decoration: none;
         }
 
-        .cta {
-            text-align: center;
-            margin-top: 2rem;
-        }
-
-        .cta button {
-            background-color: #FF9900;
-            color: var(--button-text-color);
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .cta button:hover {
-            background-color: #FF4500;
-        }
-
-        #contact-form {
-            background-color: var(--background-color);
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        #contact-form input,
-        #contact-form textarea {
-            width: 100%;
-            padding: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            color: #333;
-            margin-bottom: 0.75rem;
-        }
-
-        #contact-form button[type="submit"] {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-            display: block;
-            margin: 0 auto;
-        }
-
-        #contact-form button[type="submit"]:hover {
-            background-color: #002244;
-        }
-
-        .qr-code {
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .qr-code img {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto;
-            loading: lazy;
-        }
-
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-            margin-top: 2rem;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .features {
-                flex-direction: column;
-            }
-
-            .feature {
-                margin-bottom: 1rem;
-            }
+        .news-article a:hover {
+            text-decoration: underline;
         }
     </style>
 
-    <!-- Load non-critical JS after page load -->
-    <script defer src="https://app.aminos.ai/js/chat_plugin.js" data-bot-id="33247"></script>
+    <!-- News API Script -->
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function () {
+            const apiKey = 'YOUR_API_KEY';  // Replace with your News API key
+            const newsContainer = document.querySelector('.news-section');
+
+            async function fetchNews() {
+                try {
+                    const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`);
+                    const data = await response.json();
+
+                    if (data.articles) {
+                        renderNews(data.articles);
+                    } else {
+                        newsContainer.innerHTML = "<p>No news available at the moment.</p>";
+                    }
+                } catch (error) {
+                    newsContainer.innerHTML = "<p>Failed to fetch news. Please try again later.</p>";
+                }
+            }
+
+            function renderNews(articles) {
+                let newsHTML = '';
+                articles.forEach(article => {
+                    newsHTML += `
+                        <div class="news-article">
+                            <h2>${article.title}</h2>
+                            <p>${article.description || 'No description available.'}</p>
+                            <a href="${article.url}" target="_blank">Read more</a>
+                        </div>
+                    `;
+                });
+                newsContainer.innerHTML = newsHTML;
+            }
+
+            fetchNews();
+        });
+    </script>
 
 </head>
 
 <body>
     <header>
-        <!-- Banner Image (Now in WebP format) -->
-        <picture>
-            <source srcset="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/ff04667d963c9413c40fb81354f3e5b24c3bf27d/1000043438.webp" type="image/webp">
-            <img src="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/main/fallback-banner.jpg" alt="Intelliai Pro Series Banner" width="1920" height="500" loading="lazy">
-        </picture>
-        <h1>Introducing the Intelliai Pro Series</h1>
-        <p class="highlight">Limited Time Offer: $199 Only</p>
-        <p>Boost your online presence with a professionally crafted landing page and advanced chatbot technology, all at an unbeatable price.</p>
+        <h1>Intelliai Pro Series</h1>
+        <p>Latest News Updates</p>
     </header>
 
     <main>
-        <section class="section">
-            <h2>What's Included</h2>
-            <div class="features">
-                <div class="feature">
-                    <h3>Custom Landing Page</h3>
-                    <p>Receive a digital business card-style landing page, meticulously designed using HTML, CSS, and JavaScript. Optimized for speed and SEO.</p>
-                </div>
-                <div class="feature">
-                    <h3>Advanced Chatbot</h3>
-                    <p>Get Intellichat, a cutting-edge GPT-4
-
-                        chatbot tailored to your data, seamlessly integrated into your site.</p>
-                </div>
-                <div class="feature">
-                    <h3>2 Years Free Maintenance</h3>
-                    <p>Enjoy premium support: Your site and chatbot are maintained at no cost for the first 2 years.</p>
-                </div>
-            </div>
+        <section class="news-section">
+            <!-- News articles will be loaded here dynamically -->
+            <p>Loading news articles...</p>
         </section>
-
-        <section class="section cta">
-            <h2>Why Choose Intelliai Pro Series?</h2>
-            <p>No recurring fees, just a one-time payment of $199. Optional updates available for a $50 service fee.</p>
-            <button onclick="window.location.href='#contact'">Get Started Today!</button>
-        </section>
-
-        <section id="contact" class="section">
-            <h2>Contact Us</h2>
-            <p>Have questions or want to check development time? Typically, our turnaround is 3 days, but it can vary based on demand. Contact us below to receive an estimated timeline before finalizing your payment.</p>
-
-            <!-- Contact Form -->
-            <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                <input type="hidden" name="form-name" value="contact">
-                <p class="hidden">
-                    <label>Don’t fill this out if you're human: <input name="bot-field"></label>
-                </p>
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-
-            <!-- QR Code Image (Now in WebP format) -->
-            <div class="qr-code">
-                <h3>Support Us via PayPal</h3>
-                <picture>
-                    <source srcset="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/ff04667d963c9413c40fb81354f3e5b24c3bf27d/qrcode%20(1).webp" type="image/webp">
-                    <img src="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/main/fallback-qrcode.png" alt="Support Us via PayPal QR Code" width="200" height="200" loading="lazy">
-                </picture>
-            </div>
-        </section>
-
-        <footer>
-            <p>© 2024 Intelliai Pro Series | <a href="#">Privacy Policy</a></p>
-        </footer>
     </main>
 
 </body>
