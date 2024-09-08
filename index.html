@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Intelliai Pro Series | Page 2</title>
+    <title>Intelliai Pro Series | Page 2 with Latest News</title>
 
     <!-- Meta Description for SEO -->
     <meta name="description" content="Discover more features of the Intelliai Pro Series, starting at $199. Enhance your online presence with our advanced solutions.">
@@ -141,6 +141,48 @@
             height: 200px;
         }
 
+        /* Latest News Section */
+        #latest-news {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #latest-news h2 {
+            text-align: center;
+            color: #002244;
+        }
+
+        .news-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .news-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-item h3 a {
+            color: #336699;
+            text-decoration: none;
+        }
+
+        .news-item h3 a:hover {
+            text-decoration: underline;
+        }
+
+        .news-item p {
+            font-size: 1rem;
+            color: #333;
+        }
+
         footer {
             background-color: var(--primary-color);
             color: white;
@@ -177,6 +219,15 @@
         <button onclick="window.location.href='#contact'">Get Started Today!</button>
     </section>
 
+    <!-- Latest News Section -->
+    <section id="latest-news">
+        <h2>Latest News</h2>
+        <div id="news-container">
+            <p>Loading latest news...</p>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
     <section id="contact-form">
         <h2>Contact Us</h2>
         <form name="contact" method="POST">
@@ -187,6 +238,7 @@
         </form>
     </section>
 
+    <!-- PayPal QR Code -->
     <section class="qr-code">
         <h3>Support Us via PayPal</h3>
         <img src="https://example.com/paypal-qrcode.png" alt="PayPal QR Code">
@@ -195,6 +247,54 @@
     <footer>
         <p>© 2024 Intelliai Pro Series | <a href="#">Privacy Policy</a></p>
     </footer>
+
+    <!-- Fetch Latest News JavaScript -->
+    <script>
+        // Fetch news articles from News API
+        async function fetchLatestNews() {
+            const apiKey = 'YOUR_API_KEY'; // Replace with your News API key
+            const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                if (data.articles && data.articles.length > 0) {
+                    displayNews(data.articles);
+                } else {
+                    document.getElementById('news-container').innerHTML = '<p>No news available at the moment.</p>';
+                }
+            } catch (error) {
+                console.error('Error fetching news:', error);
+                document.getElementById('news-container').innerHTML = '<p>Failed to load news.</p>';
+            }
+        }
+
+        // Display news articles
+        function displayNews(articles) {
+            const newsContainer = document.getElementById('news-container');
+            newsContainer.innerHTML = ''; // Clear any previous content
+
+            articles.slice(0, 5).forEach(article => { // Limit to 5 news items
+                const newsItem = document.createElement('div');
+                newsItem.className = 'news-item';
+
+                const title = document.createElement('h3');
+                title.innerHTML = `<a href="${article.url}" target="_blank">${article.title}</a>`;
+
+                const description = document.createElement('p');
+                description.textContent = article.description || 'No description available.';
+
+                newsItem.appendChild(title);
+                newsItem.appendChild(description);
+                newsContainer.appendChild(newsItem);
+            });
+        }
+
+        // Fetch news on page load
+        window.onload = fetchLatestNews;
+    </script>
+
 </body>
 
 </html>
