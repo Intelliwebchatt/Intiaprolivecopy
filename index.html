@@ -3,143 +3,198 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intelliai Pro Series | News Feed Integration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Intelliai Pro Series | Page 2</title>
 
     <!-- Meta Description for SEO -->
-    <meta name="description" content="Boost your online presence with Intelliai Pro Series. Get a custom landing page and advanced chatbot for just $199. Limited time offer!">
+    <meta name="description" content="Discover more features of the Intelliai Pro Series, starting at $199. Enhance your online presence with our advanced solutions.">
+
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://www.intelliai.com/page-2">
 
     <!-- Preload Header Image -->
-    <link rel="preload" as="image" href="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/ff04667d963c9413c40fb81354f3e5b24c3bf27d/1000043438.webp" type="image/webp">
+    <link rel="preload" as="image" href="https://example.com/new-header-image.webp" type="image/webp">
 
-    <!-- Preconnect and Preload Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
-    <!-- Inline Critical CSS -->
+    <!-- Inline CSS -->
     <style>
         :root {
-            --primary-color: #003366;
-            --secondary-color: #6699cc;
-            --text-color: #222;
-            --background-color: #f9f9f9;
+            --primary-color: #002244;
+            --secondary-color: #336699;
+            --highlight-color: #d40000;
+            --button-color: #e68a00;
+            --button-text-color: #ffffff;
         }
 
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
             margin: 0;
             padding: 0;
+            background-color: #f9f9f9;
         }
 
         header {
-            background: var(--primary-color);
-            color: white;
+            background: linear-gradient(135deg, #003366, #001933);
             text-align: center;
-            padding: 1rem 0;
+            padding: 2rem;
+            color: white;
         }
 
         header h1 {
             font-size: 2.5rem;
-            margin: 0;
+            margin: 0.5rem 0;
         }
 
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-
-        .news-section {
-            background-color: #fff;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .news-article {
+        header p {
+            font-size: 1.2rem;
             margin-bottom: 1.5rem;
         }
 
-        .news-article h2 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
+        .highlight {
+            color: var(--highlight-color);
+            font-weight: bold;
         }
 
-        .news-article p {
-            font-size: 1rem;
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 2rem;
         }
 
-        .news-article a {
-            display: inline-block;
-            margin-top: 0.5rem;
+        .feature {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin: 1rem;
+            width: 30%;
+            text-align: center;
+        }
+
+        .feature h3 {
             color: var(--secondary-color);
-            text-decoration: none;
+            margin-bottom: 1rem;
         }
 
-        .news-article a:hover {
-            text-decoration: underline;
+        .cta {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .cta button {
+            background-color: var(--button-color);
+            color: var(--button-text-color);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .cta button:hover {
+            background-color: #cc7400;
+        }
+
+        /* Contact Form */
+        #contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #contact-form input, #contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #contact-form button {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #contact-form button:hover {
+            background-color: #001933;
+        }
+
+        /* PayPal QR Code */
+        .qr-code {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .qr-code img {
+            width: 200px;
+            height: 200px;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
         }
     </style>
-
-    <!-- News API Script -->
-    <script defer>
-        document.addEventListener("DOMContentLoaded", function () {
-            const apiKey = 'YOUR_API_KEY';  // Replace with your News API key
-            const newsContainer = document.querySelector('.news-section');
-
-            async function fetchNews() {
-                try {
-                    const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`);
-                    const data = await response.json();
-
-                    if (data.articles) {
-                        renderNews(data.articles);
-                    } else {
-                        newsContainer.innerHTML = "<p>No news available at the moment.</p>";
-                    }
-                } catch (error) {
-                    newsContainer.innerHTML = "<p>Failed to fetch news. Please try again later.</p>";
-                }
-            }
-
-            function renderNews(articles) {
-                let newsHTML = '';
-                articles.forEach(article => {
-                    newsHTML += `
-                        <div class="news-article">
-                            <h2>${article.title}</h2>
-                            <p>${article.description || 'No description available.'}</p>
-                            <a href="${article.url}" target="_blank">Read more</a>
-                        </div>
-                    `;
-                });
-                newsContainer.innerHTML = newsHTML;
-            }
-
-            fetchNews();
-        });
-    </script>
-
 </head>
 
 <body>
     <header>
-        <h1>Intelliai Pro Series</h1>
-        <p>Latest News Updates</p>
+        <h1>Intelliai Pro Series Features</h1>
+        <p class="highlight">Starting at $199 - No Monthly Fees</p>
     </header>
 
-    <main>
-        <section class="news-section">
-            <!-- News articles will be loaded here dynamically -->
-            <p>Loading news articles...</p>
-        </section>
-    </main>
+    <section class="features">
+        <div class="feature">
+            <h3>Mobile-Optimized Design</h3>
+            <p>Your site will look amazing on mobile, ensuring the best user experience.</p>
+        </div>
+        <div class="feature">
+            <h3>Fast Loading Speed</h3>
+            <p>We ensure your page loads fast, improving user retention and SEO rankings.</p>
+        </div>
+        <div class="feature">
+            <h3>SEO Integration</h3>
+            <p>Get a website that ranks well with our best-in-class SEO practices.</p>
+        </div>
+    </section>
 
+    <section class="cta">
+        <h2>Start Your Digital Journey with Intelliai</h2>
+        <button onclick="window.location.href='#contact'">Get Started Today!</button>
+    </section>
+
+    <section id="contact-form">
+        <h2>Contact Us</h2>
+        <form name="contact" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <section class="qr-code">
+        <h3>Support Us via PayPal</h3>
+        <img src="https://example.com/paypal-qrcode.png" alt="PayPal QR Code">
+    </section>
+
+    <footer>
+        <p>© 2024 Intelliai Pro Series | <a href="#">Privacy Policy</a></p>
+    </footer>
 </body>
 
 </html>
