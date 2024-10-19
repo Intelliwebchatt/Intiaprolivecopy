@@ -277,16 +277,18 @@
 
 <body>
     <header>
-        <!-- Banner Image (Now in WebP format) -->
-        <picture>
-            <source srcset="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprol
-                ivecopy/ff04667d963c9413c40fb81354f3e5b24c3bf27d/1000043438.webp" type="image/webp">
-            <img src="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/main/fallback-banner.jpg" alt="Intelliai Pro Series Banner" width="1920" height="500" loading="lazy">
-        </picture>
-        <h1>Introducing the Intelliai Pro Series</h1>
-        <p class="highlight">Advanced Solutions Starting at $100/Year</p>
-        <p>Boost your online presence with our advanced chatbot and business card landing page solutions, tailored to your needs.</p>
-    </header>
+    <!-- Banner Image (Now with fallback to JPEG in case WebP fails) -->
+    <picture>
+        <!-- WebP Image for modern browsers -->
+        <source srcset="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/ff04667d963c9413c40fb81354f3e5b24c3bf27d/1000043438.webp" type="image/webp">
+        <!-- Fallback JPEG Image for browsers that don't support WebP -->
+        <img src="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/main/fallback-banner.jpg" 
+            alt="Intelliai Pro Series Banner" width="1920" height="500" loading="lazy">
+    </picture>
+    <h1>Introducing the Intelliai Pro Series</h1>
+    <p class="highlight">Advanced Solutions Starting at $100/Year</p>
+    <p>Boost your online presence with our advanced chatbot and business card landing page solutions, tailored to your needs.</p>
+</header>
 
     <main>
         <!-- Features Section -->
