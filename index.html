@@ -3,17 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=5">
-    <title>Intelliai Pro Series | Advanced Solutions Starting at $100/Year</title>
+    <!-- Meta tags for mobile responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelliai Pro Series | Advanced Chatbot & Landing Page Solutions</title>
 
     <!-- Meta Description for SEO -->
-    <meta name="description" content="Boost your online presence with Intelliai Pro Series. Get an advanced chatbot for $100/year, a business card landing page for $150/year, or both for $200/year.">
+    <meta name="description" content="Enhance your online presence with Intelliai Pro Series. Get advanced chatbot and business card landing page solutions starting at $100/year.">
 
     <!-- Meta Robots Tag -->
     <meta name="robots" content="index, follow">
 
     <!-- Canonical Tag -->
-    <link rel="canonical" href="https://www.yoursite.com/your-page-url">
+    <link rel="canonical" href="https://www.yoursite.com/">
 
     <!-- Structured Data (Organization Schema) -->
     <script type="application/ld+json">
@@ -21,7 +22,7 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Intelliai Pro Series",
-        "url": "https://www.yoursite.com",
+        "url": "https://www.yoursite.com/",
         "logo": "https://www.yoursite.com/logo.png",
         "contactPoint": {
             "@type": "ContactPoint",
@@ -31,66 +32,122 @@
     }
     </script>
 
-    <!-- Preload Header Image in WebP Format -->
-    <link rel="preload" as="image" href="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/ff04667d963c9413c40fb81354f3e5b24c3bf27d/1000043438.webp" type="image/webp">
-
     <!-- Preconnect and Preload Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-Ho6EMu5XCrpUJvuzAPFtU3gax+K12mecXX1BPMJQzVn6qG61E6lM2kCfaR68ZCMO1SdE6s0MG2zkWeA6GdO1vw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome for Social Media Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-eN6AT9HVj6peItt4I5XBhsf5YI23H7EaaPj5bVZ4T6SLB3odJXsnPrWyJByTrs4b" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Inline Critical CSS -->
     <style>
         :root {
-            --primary-color: #001F3F; /* Darker for better contrast */
-            --secondary-color: #004080; /* Darker for better contrast */
-            --text-color: #000; /* Black for better contrast */
-            --background-color: #fff; /* White for better contrast */
-            --highlight-color: #b30000; /* Darker red for better visibility */
-            --button-color: #cc6600; /* Improved contrast for buttons */
-            --button-text-color: #fff; /* White button text for contrast */
-            --header-gradient: linear-gradient(135deg, #003366, #001f4d); /* Darker gradient for better contrast */
+            --primary-color: #001F3F;
+            --secondary-color: #004080;
+            --text-color: #333;
+            --background-color: #fff;
+            --highlight-color: #b30000;
+            --button-color: #cc6600;
+            --button-text-color: #fff;
+            --header-gradient: linear-gradient(135deg, rgba(0, 31, 63, 0.8), rgba(0, 31, 63, 0.8)), url('https://source.unsplash.com/1600x900/?technology,abstract');
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--background-color);
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth;
         }
 
         header {
             background: var(--header-gradient);
+            background-size: cover;
+            background-position: center;
             color: white;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-bottom: 5px solid #001f4d;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        header img {
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto;
-            max-height: 500px;
-            object-fit: cover;
-            display: block;
-            loading: lazy;
+            height: 100%;
+            background: rgba(0, 31, 63, 0.6);
         }
 
         header h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin: 1rem 0;
+            z-index: 1;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+            animation-delay: 0.5s;
         }
 
         header p {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-bottom: 1.5rem;
+            z-index: 1;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+            animation-delay: 0.8s;
         }
 
         header .highlight {
             color: var(--highlight-color);
             font-weight: bold;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--highlight-color);
         }
 
         main {
@@ -100,37 +157,52 @@
         }
 
         .section {
-            background-color: white;
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 4rem 0;
         }
 
-        h2 {
+        .section h2 {
             color: var(--primary-color);
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
             text-align: center;
         }
 
         .features {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 1rem;
+            gap: 2rem;
+            justify-content: center;
         }
 
-        .feature {
-            flex: 1 1 30%;
-            padding: 1rem;
-            border: 1px solid #ddd;
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
             border-radius: 8px;
-            text-align: center;
+            padding: 2rem;
+            flex: 1 1 calc(25% - 2rem);
+            max-width: calc(25% - 2rem);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
         }
 
-        .feature h3 {
-            margin-bottom: 0.5rem;
+        .feature-card:hover {
+            transform: scale(1.05);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
             color: var(--secondary-color);
+        }
+
+        .feature-card p {
+            margin-bottom: 1rem;
+        }
+
+        .feature-card a {
+            color: var(--highlight-color);
+            text-decoration: none;
+            font-weight: bold;
         }
 
         .cta {
@@ -156,49 +228,39 @@
 
         #contact-form {
             background-color: var(--background-color);
-            padding: 15px;
+            padding: 2rem;
             border-radius: 8px;
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
         #contact-form input,
         #contact-form textarea {
             width: 100%;
-            padding: 0.5rem;
+            padding: 1rem;
             border: 1px solid #ddd;
             border-radius: 4px;
             color: #333;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
         }
 
         #contact-form button[type="submit"] {
             background-color: var(--primary-color);
             color: white;
             border: none;
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.5rem;
             cursor: pointer;
             border-radius: 4px;
             transition: background-color 0.3s;
             display: block;
             margin: 0 auto;
+            font-size: 1.1rem;
         }
 
         #contact-form button[type="submit"]:hover {
             background-color: #001933;
-        }
-
-        .qr-code {
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .qr-code img {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto;
-            loading: lazy;
         }
 
         footer {
@@ -206,97 +268,145 @@
             color: white;
             text-align: center;
             padding: 1rem;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
             margin-top: 2rem;
         }
 
-        .hidden {
-            display: none;
+        footer .social-icons a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        footer .social-icons a:hover {
+            color: var(--highlight-color);
+        }
+
+        /* Scroll-triggered animations */
+        [data-aos] {
+            opacity: 0;
+            transition-property: opacity, transform;
+            transition-duration: 1s;
+            transition-timing-function: ease;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .feature-card {
+                flex: 1 1 calc(50% - 2rem);
+                max-width: calc(50% - 2rem);
+            }
         }
 
         @media (max-width: 768px) {
-            .features {
-                flex-direction: column;
-            }
-
-            .feature {
-                margin-bottom: 1rem;
+            .feature-card {
+                flex: 1 1 100%;
+                max-width: 100%;
             }
         }
     </style>
-
-    <!-- Load non-critical JS after page load -->
-    <script defer src="https://app.aminos.ai/js/chat_plugin.js" data-bot-id="33247"></script>
-
 </head>
 
 <body>
-    <header>
-        <!-- Banner Image (Now in WebP format) -->
-        <picture>
-            <source srcset="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/ff04667d963c9413c40fb81354f3e5b24c3bf27d/1000043438.webp" type="image/webp">
-            <img src="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/main/fallback-banner.jpg" alt="Intelliai Pro Series Banner" width="1920" height="500" loading="lazy">
-        </picture>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#cards">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero">
         <h1>Introducing the Intelliai Pro Series</h1>
         <p class="highlight">Advanced Solutions Starting at $100/Year</p>
         <p>Boost your online presence with our advanced chatbot and business card landing page solutions, tailored to your needs.</p>
+        <a href="#contact" class="cta-button">Get Started Today!</a>
     </header>
 
     <main>
-        <section class="section">
+        <!-- Features Section -->
+        <section id="features" class="section" data-aos="fade-up">
             <h2>What's Included</h2>
             <div class="features">
-                <div class="feature">
+                <div class="feature-card" data-aos="fade-up">
                     <h3>Advanced Chatbot - $100/Year</h3>
-                    <p>Developing, maintaining, and hosting of an advanced chatbot tailored to your data, seamlessly integrated into your site.</p>
+                    <p>Developing, maintaining, and hosting an advanced chatbot tailored to your data, seamlessly integrated into your site.</p>
+                    <a href="#contact">Learn More</a>
                 </div>
-                <div class="feature">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
                     <h3>Business Card Landing Page - $150/Year</h3>
                     <p>Developing and maintaining a digital business card-style landing page, meticulously designed using HTML, CSS, and JavaScript.</p>
+                    <a href="#contact">Learn More</a>
                 </div>
-                <div class="feature">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
                     <h3>Combo Package - $200/Year</h3>
                     <p>Get both the advanced chatbot and the landing page together for a bundled price.</p>
+                    <a href="#contact">Learn More</a>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Custom Solutions</h3>
+                    <p>Need something more tailored? We offer custom solutions to meet your unique business needs.</p>
+                    <a href="#contact">Get a Quote</a>
                 </div>
             </div>
         </section>
 
-        <section class="section cta">
+        <!-- Call to Action Section -->
+        <section class="section cta" data-aos="fade-up">
             <h2>Why Choose Intelliai Pro Series?</h2>
             <p>Affordable annual pricing with comprehensive maintenance and hosting included. Enhance your online presence without breaking the bank.</p>
             <button onclick="window.location.href='#contact'">Get Started Today!</button>
         </section>
 
-        <section id="contact" class="section">
+        <!-- Contact Section -->
+        <section id="contact" class="section" data-aos="fade-up">
             <h2>Contact Us</h2>
             <p>Have questions or want to check development time? Typically, our turnaround is 3 days, but it can vary based on demand. Contact us below to receive an estimated timeline before finalizing your payment.</p>
 
             <!-- Contact Form -->
-            <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <form id="contact-form" name="contact" method="POST" data-netlify="true">
                 <input type="hidden" name="form-name" value="contact">
-                <p class="hidden">
-                    <label>Don’t fill this out if you're human: <input name="bot-field"></label>
-                </p>
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
+                <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
+                <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
+                <textarea name="message" placeholder="Your Message" required aria-label="Your Message"></textarea>
                 <button type="submit">Send Message</button>
             </form>
 
-            <!-- QR Code Image (Now in WebP format) -->
-            <div class="qr-code">
-                <h3>Support Us via PayPal</h3>
-                <picture>
-                    <source srcset="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/ff04667d963c9413c40fb81354f3e5b24c3bf27d/qrcode%20(1).webp" type="image/webp">
-                    <img src="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/main/fallback-qrcode.png" alt="Support Us via PayPal QR Code" width="200" height="200" loading="lazy">
-                </picture>
+            <!-- Placeholder for Chatbot Script -->
+            <div id="chatbot-placeholder" data-aos="fade-up">
+                <!-- Chatbot script will be integrated here in the future -->
             </div>
         </section>
 
+        <!-- Footer -->
         <footer>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com/yourprofile" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
             <p>© 2024 Intelliai Pro Series | <a href="#">Privacy Policy</a></p>
         </footer>
     </main>
+
+    <!-- AOS Animation Library JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-F6sjavV0bQBWt0p/5Yf8Sw+RCf16xGo3k9C2rR1aXVJCzwCq3qLCRRxmAEdY+3SLPevPhZJGzNXkQxkZv1fRvQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 1000,
+        });
+    </script>
 </body>
 
 </html>
