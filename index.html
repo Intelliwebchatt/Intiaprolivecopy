@@ -6,16 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intelliai Pro Series | Advanced Solutions Starting at $100/Year</title>
 
-    <!-- Meta Description for SEO -->
     <meta name="description" content="Boost your online presence with Intelliai Pro Series. Get an advanced chatbot for $100/year, a business card landing page for $150/year, or both for $200/year.">
-
-    <!-- Meta Robots Tag -->
     <meta name="robots" content="index, follow">
-
-    <!-- Canonical Tag -->
     <link rel="canonical" href="https://www.yoursite.com/your-page-url">
 
-    <!-- Structured Data (Organization Schema) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -31,12 +25,10 @@
     }
     </script>
 
-    <!-- Preconnect and Preload Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Pacifico&display=swap" rel="stylesheet">
 
-    <!-- Inline Critical CSS -->
     <style>
         :root {
             --primary-color: #001F3F;
@@ -47,6 +39,7 @@
             --button-color: #cc6600;
             --button-text-color: #fff;
             --header-gradient: linear-gradient(135deg, #003366, #001f4d);
+            --shadow-color: rgba(0, 0, 0, 0.2);
         }
 
         body {
@@ -62,29 +55,31 @@
             background: var(--header-gradient);
             color: white;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px var(--shadow-color);
             border-bottom: 5px solid #001f4d;
             position: relative;
             overflow: hidden;
+            padding: 2rem 0;
         }
 
         header img {
-            width: 100%;
+            width: 90%;
             height: auto;
-            max-height: 500px;
+            max-height: 400px;
             object-fit: cover;
             display: block;
+            margin: 0 auto;
             loading: lazy;
         }
 
         header h1 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             margin: 1rem 0;
             animation: fadeIn 2s ease-in-out;
         }
 
         header p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 1.5rem;
             animation: fadeIn 3s ease-in-out;
         }
@@ -113,10 +108,10 @@
 
         .section {
             background-color: white;
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 2rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
             animation: fadeIn 2s ease-in-out;
         }
 
@@ -135,17 +130,18 @@
 
         .feature {
             flex: 1 1 30%;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            padding: 1.5rem;
+            border-radius: 12px;
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.8);
-            transition: transform 0.3s, background-color 0.3s;
+            background: linear-gradient(135deg, #f0f0f0, #ffffff);
+            box-shadow: 0 8px 15px var(--shadow-color);
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
         }
 
         .feature:hover {
             transform: scale(1.05);
-            background-color: rgba(255, 255, 255, 1);
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
         }
 
         .feature h3 {
@@ -166,40 +162,33 @@
             border-radius: 8px;
             font-size: 1.2rem;
             cursor: pointer;
-            transition: background-color 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 6px 15px var(--shadow-color);
         }
 
         .cta button:hover {
             background-color: #b35900;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            animation: bounce 0.3s ease-in-out;
         }
 
-        /* New FAQ section */
-        .faq-section {
-            margin-top: 2rem;
-            padding: 2rem;
-            background: #f9f9f9;
-            border-radius: 8px;
-        }
-
-        .faq {
-            margin-bottom: 1.5rem;
-        }
-
-        .faq h3 {
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-        }
-
-        .faq p {
-            margin: 0.5rem 0;
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+            100% {
+                transform: translateY(0);
+            }
         }
 
         #contact-form {
             background-color: var(--background-color);
             padding: 15px;
             border-radius: 8px;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 12px var(--shadow-color);
             max-width: 500px;
             margin: 0 auto;
         }
@@ -221,13 +210,12 @@
             padding: 0.5rem 1rem;
             cursor: pointer;
             border-radius: 4px;
-            transition: background-color 0.3s;
-            display: block;
-            margin: 0 auto;
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
 
         #contact-form button[type="submit"]:hover {
             background-color: #001933;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
 
         .qr-code {
@@ -247,7 +235,7 @@
             color: white;
             text-align: center;
             padding: 1rem;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 -2px 4px var(--shadow-color);
             margin-top: 2rem;
         }
 
@@ -273,10 +261,17 @@
             .feature {
                 margin-bottom: 1rem;
             }
+
+            header img {
+                max-height: 250px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 
-    <!-- Load non-critical JS after page load -->
     <script defer src="https://app.aminos.ai/js/chat_plugin.js" data-bot-id="33247"></script>
 </head>
 
@@ -284,7 +279,8 @@
     <header>
         <!-- Banner Image (Now in WebP format) -->
         <picture>
-            <source srcset="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/ff04667d963c9413c40fb81354f3e5b24c3bf27d/1000043438.webp" type="image/webp">
+            <source srcset="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprol
+                ivecopy/ff04667d963c9413c40fb81354f3e5b24c3bf27d/1000043438.webp" type="image/webp">
             <img src="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/main/fallback-banner.jpg" alt="Intelliai Pro Series Banner" width="1920" height="500" loading="lazy">
         </picture>
         <h1>Introducing the Intelliai Pro Series</h1>
@@ -293,7 +289,7 @@
     </header>
 
     <main>
-<!-- Features Section -->
+        <!-- Features Section -->
         <section class="section">
             <h2>What's Included</h2>
             <div class="features">
@@ -362,6 +358,7 @@
 
     <footer>
         <p>© 2024 Intelliai Pro Series | <a href="#">Privacy Policy</a></p>
+        <p>Created by <a href="https://intelliaimarketing.com" target="_blank">IntelliaiMarketing</a></p> <!-- Added link here -->
         <div class="social-icons">
             <a href="https://facebook.com"><img src="https://img.icons8.com/color/48/000000/facebook.png" alt="Facebook"></a>
             <a href="https://twitter.com"><img src="https://img.icons8.com/color/48/000000/twitter.png" alt="Twitter"></a>
@@ -380,8 +377,6 @@
             });
         });
     </script>
-
 </body>
 
 </html>
-        
