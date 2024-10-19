@@ -61,23 +61,26 @@
             padding: 0;
         }
 
-        header {
-            background: var(--header-gradient);
-            color: white;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-bottom: 5px solid #001f4d;
-            position: relative;
-            overflow: hidden;
+        /* Parallax Effect for Hero Section */
+        .parallax {
+            /* Set height to create a large visual section */
+            height: 100vh;
+            background-image: url('https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/ff04667d963c9413c40fb81354f3e5b24c3bf27d/1000043438.webp');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
-        header img {
-            width: 100%;
-            height: auto;
-            max-height: 500px;
-            object-fit: cover;
-            display: block;
-            loading: lazy;
+        header {
+            text-align: center;
+            position: relative;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
         }
 
         header h1 {
@@ -149,11 +152,6 @@
         .feature:hover {
             transform: scale(1.05);
             background-color: rgba(255, 255, 255, 1);
-        }
-
-        .feature h3 {
-            margin-bottom: 0.5rem;
-            color: var(--secondary-color);
         }
 
         .cta {
@@ -229,8 +227,7 @@
             color: white;
             text-align: center;
             padding: 1rem;
-            box-shadow: 0 -2px
-box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
             margin-top: 2rem;
         }
 
@@ -256,6 +253,11 @@ box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
             .feature {
                 margin-bottom: 1rem;
             }
+
+            /* Disable parallax on mobile for performance */
+            .parallax {
+                background-attachment: scroll;
+            }
         }
     </style>
 
@@ -264,16 +266,16 @@ box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 </head>
 
 <body>
-    <header>
-        <!-- Banner Image (Now in WebP format) -->
-        <picture>
-            <source srcset="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/ff04667d963c9413c40fb81354f3e5b24c3bf27d/1000043438.webp" type="image/webp">
-            <img src="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/main/fallback-banner.jpg" alt="Intelliai Pro Series Banner" width="1920" height="500" loading="lazy">
-        </picture>
-        <h1>Introducing the Intelliai Pro Series</h1>
-        <p class="highlight">Advanced Solutions Starting at $100/Year</p>
-        <p>Boost your online presence with our advanced chatbot and business card landing page solutions, tailored to your needs.</p>
-    </header>
+    <!-- Parallax Hero Section -->
+    <div class="parallax">
+        <header>
+            <h1>Introducing the Intelliai Pro Series</h1>
+            <p class="highlight">Advanced Solutions Starting at $100/Year</p>
+            <p>Boost your online presence with our advanced chatbot and business card landing page solutions, tailored to your
+
+               needs.</p>
+        </header>
+    </div>
 
     <main>
         <section class="section">
@@ -347,8 +349,6 @@ box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
             });
         });
     </script>
-
 </body>
 
-</html>
-            
+</html> 
