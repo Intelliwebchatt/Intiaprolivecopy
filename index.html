@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- Meta tags for mobile responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intelliai Pro Series | Advanced Chatbot & Landing Page Solutions</title>
 
@@ -96,10 +95,6 @@
             margin: 1rem 0;
             z-index: 1;
             position: relative;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1s forwards;
-            animation-delay: 0.5s;
         }
 
         header p {
@@ -107,10 +102,6 @@
             margin-bottom: 1.5rem;
             z-index: 1;
             position: relative;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1s forwards;
-            animation-delay: 0.8s;
         }
 
         header .highlight {
@@ -195,16 +186,6 @@
             color: var(--secondary-color);
         }
 
-        .feature-card p {
-            margin-bottom: 1rem;
-        }
-
-        .feature-card a {
-            color: var(--highlight-color);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
         .cta {
             text-align: center;
             margin-top: 2rem;
@@ -282,131 +263,8 @@
             color: var(--highlight-color);
         }
 
-        /* Scroll-triggered animations */
-        [data-aos] {
-            opacity: 0;
-            transition-property: opacity, transform;
-            transition-duration: 1s;
-            transition-timing-function: ease;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         @media (max-width: 992px) {
             .feature-card {
                 flex: 1 1 calc(50% - 2rem);
                 max-width: calc(50% - 2rem);
             }
-        }
-
-        @media (max-width: 768px) {
-            .feature-card {
-                flex: 1 1 100%;
-                max-width: 100%;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#cards">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <header id="hero">
-        <h1>Introducing the Intelliai Pro Series</h1>
-        <p class="highlight">Advanced Solutions Starting at $100/Year</p>
-        <p>Boost your online presence with our advanced chatbot and business card landing page solutions, tailored to your needs.</p>
-        <a href="#contact" class="cta-button">Get Started Today!</a>
-    </header>
-
-    <main>
-        <!-- Features Section -->
-        <section id="features" class="section" data-aos="fade-up">
-            <h2>What's Included</h2>
-            <div class="features">
-                <div class="feature-card" data-aos="fade-up">
-                    <h3>Advanced Chatbot - $100/Year</h3>
-                    <p>Developing, maintaining, and hosting an advanced chatbot tailored to your data, seamlessly integrated into your site.</p>
-                    <a href="#contact">Learn More</a>
-                </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                    <h3>Business Card Landing Page - $150/Year</h3>
-                    <p>Developing and maintaining a digital business card-style landing page, meticulously designed using HTML, CSS, and JavaScript.</p>
-                    <a href="#contact">Learn More</a>
-                </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                    <h3>Combo Package - $200/Year</h3>
-                    <p>Get both the advanced chatbot and the landing page together for a bundled price.</p>
-                    <a href="#contact">Learn More</a>
-                </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-                    <h3>Custom Solutions</h3>
-                    <p>Need something more tailored? We offer custom solutions to meet your unique business needs.</p>
-                    <a href="#contact">Get a Quote</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call to Action Section -->
-        <section class="section cta" data-aos="fade-up">
-            <h2>Why Choose Intelliai Pro Series?</h2>
-            <p>Affordable annual pricing with comprehensive maintenance and hosting included. Enhance your online presence without breaking the bank.</p>
-            <button onclick="window.location.href='#contact'">Get Started Today!</button>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section" data-aos="fade-up">
-            <h2>Contact Us</h2>
-            <p>Have questions or want to check development time? Typically, our turnaround is 3 days, but it can vary based on demand. Contact us below to receive an estimated timeline before finalizing your payment.</p>
-
-            <!-- Contact Form -->
-            <form id="contact-form" name="contact" method="POST" data-netlify="true">
-                <input type="hidden" name="form-name" value="contact">
-                <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
-                <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
-                <textarea name="message" placeholder="Your Message" required aria-label="Your Message"></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-
-            <!-- Placeholder for Chatbot Script -->
-            <div id="chatbot-placeholder" data-aos="fade-up">
-                <!-- Chatbot script will be integrated here in the future -->
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.twitter.com/yourprofile" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            </div>
-            <p>© 2024 Intelliai Pro Series | <a href="#">Privacy Policy</a></p>
-        </footer>
-    </main>
-
-    <!-- AOS Animation Library JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-F6sjavV0bQBWt0p/5Yf8Sw+RCf16xGo3k9C2rR1aXVJCzwCq3qLCRRxmAEdY+3SLPevPhZJGzNXkQxkZv1fRvQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        AOS.init({
-            once: true,
-            duration: 1000,
-        });
-    </script>
-</body>
-
-</html>
