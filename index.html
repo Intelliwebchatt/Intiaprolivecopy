@@ -25,16 +25,14 @@
             background: var(--background);
             color: var(--text);
             line-height: 1.5;
-            overflow-x: hidden;
-            perspective: 2px;
+            overflow-x: hidden; 
         }
 
         .parallax-container {
             position: relative;
             width: 100%;
             height: 100vh;
-            transform-style: preserve-3d;
-            z-index: -1;
+            overflow: hidden; 
         }
 
         .parallax-bg {
@@ -43,36 +41,24 @@
             left: 0;
             right: 0;
             bottom: 0;
-            transform: translateZ(-5px) scale(3.5);
             z-index: -1;
             background: 
                 radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 50% 50%, rgba(30, 41, 59, 0.8) 0%, var(--background) 100%);
+            background-size: 200% 200%; /* Adjust for smoother effect */
+            animation: parallax 10s linear infinite; /* Add animation */
         }
+
+        @keyframes parallax {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 50% 50%; }
+            100% { background-position: 0% 0%; }
+        }
+
 
         .floating-circles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
-            opacity: 0.1;
-            filter: blur(40px);
-            animation: float 20s infinite linear;
-        }
-
-        @keyframes float {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            100% { transform: translate(100px, 100px) rotate(360deg); }
+            display: none; /* Hide on mobile, performance and clutter */
         }
 
         /* Header Styles */
@@ -83,7 +69,7 @@
             right: 0;
             z-index: 100;
             transition: all 0.3s ease;
-            padding: 1.5rem;
+            padding: 1rem; /* Reduced padding */
         }
 
         .header.scrolled {
@@ -98,11 +84,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
+            padding: 0 1rem; /* Reduced padding */
         }
 
         .logo {
-            font-size: 1.75rem;
+            font-size: 1.5rem; /* Slightly smaller logo */
             font-weight: bold;
             background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
             -webkit-background-clip: text;
@@ -117,7 +103,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 2rem;
+            padding: 2rem 1rem; /* Adjusted padding */
             position: relative;
         }
 
@@ -128,26 +114,24 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 2rem;
+            font-size: 2.5rem; /* Smaller heading */
+            margin-bottom: 1.5rem; 
             line-height: 1.2;
             background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            transform: translateZ(0.5px) scale(0.8);
         }
 
         .hero p {
             color: var(--text-muted);
-            margin-bottom: 3rem;
-            font-size: 1.25rem;
-            transform: translateZ(0.25px) scale(0.9);
+            margin-bottom: 2rem;
+            font-size: 1.1rem; /* Smaller text */
         }
 
         /* Features Section */
         .features {
-            padding: 8rem 2rem;
+            padding: 6rem 1rem; /* Reduced padding */
             max-width: 1400px;
             margin: 0 auto;
             position: relative;
@@ -156,14 +140,14 @@
 
         .feature-grid {
             display: grid;
-            gap: 3rem;
-            margin-top: 4rem;
+            gap: 2rem; /* Reduced gap */
+            margin-top: 3rem;
         }
 
         .feature-card {
             background: var(--card-bg);
             border-radius: 1.5rem;
-            padding: 3rem;
+            padding: 2rem; /* Reduced padding */
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
@@ -196,27 +180,27 @@
         }
 
         .feature-icon {
-            width: 4rem;
-            height: 4rem;
-            margin-bottom: 2rem;
+            width: 3rem; /* Smaller icon */
+            height: 3rem; 
+            margin-bottom: 1.5rem;
             color: var(--gradient-start);
         }
 
         .feature-title {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            font-size: 1.8rem; /* Smaller heading */
+            margin-bottom: 0.8rem; 
         }
 
         .feature-price {
             color: var(--gradient-start);
-            font-size: 1.5rem;
+            font-size: 1.4rem; /* Smaller price */
             font-weight: bold;
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
 
         /* Contact Form */
         .contact {
-            padding: 8rem 2rem;
+            padding: 6rem 1rem; /* Reduced padding */
             max-width: 800px;
             margin: 0 auto;
             position: relative;
@@ -226,7 +210,7 @@
         .form-card {
             background: var(--card-bg);
             border-radius: 1.5rem;
-            padding: 3rem;
+            padding: 2rem; /* Reduced padding */
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -234,163 +218,8 @@
 
         .input {
             width: 100%;
-            padding: 1rem 1.5rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 0.75rem;
-            color: var(--text);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(4px);
-        }
+            padding: 0.8rem 1.2rem; /* Reduced padding */
 
-        .input:focus {
-            outline: none;
-            border-color: var(--gradient-start);
-            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
-        }
-
-        .button {
-            width: 100%;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 0.75rem;
-            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: var(--text-muted);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 4rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Media Queries */
-        @media (min-width: 768px) {
-            .feature-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .hero h1 {
-                font-size: 4.5rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Floating Background Elements -->
-    <div class="floating-circles">
-        <div class="circle" style="width: 400px; height: 400px; top: 10%; left: 10%;"></div>
-        <div class="circle" style="width: 300px; height: 300px; top: 60%; right: 15%;"></div>
-        <div class="circle" style="width: 200px; height: 200px; top: 30%; right: 30%;"></div>
-    </div>
-
-    <header class="header">
-        <nav class="nav">
-            <div class="logo">Intelliai Pro</div>
-            <button class="button" style="width: auto;">Get Started</button>
-        </nav>
-    </header>
-
-    <section class="parallax-container">
-        <div class="parallax-bg"></div>
-        <div class="hero">
-            <div class="hero-content">
-                <h1>The Future of Digital Presence</h1>
-                <p>Elevate your online presence with our cutting-edge solutions, designed for the modern digital landscape.</p>
-                <button class="button" style="max-width: 200px;">Explore Features</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="features">
-        <div class="feature-grid">
-            <div class="feature-card">
-                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <path d="M8 12h8" />
-                    <path d="M12 8v8" />
-                </svg>
-                <h3 class="feature-title">Advanced Chatbot</h3>
-                <p>AI-powered conversation that adapts to your business needs</p>
-                <div class="feature-price">$100/Year</div>
-            </div>
-
-            <div class="feature-card">
-                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="2" y="5" width="20" height="14" rx="2" />
-                    <path d="M2 10h20" />
-                </svg>
-                <h3 class="feature-title">Business Card Page</h3>
-                <p>Your digital presence, elegantly crafted</p>
-                <div class="feature-price">$150/Year</div>
-            </div>
-
-            <div class="feature-card">
-                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                    <path d="M3.27 6.96L12 12.01l8.73-5.05" />
-                    <path d="M12 22.08V12" />
-                </svg>
-                <h3 class="feature-title">Combo Package</h3>
-                <p>Complete digital solution for your business</p>
-                <div class="feature-price">$200/Year</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact">
-        <div class="form-card">
-            <h2 style="margin-bottom: 2rem; text-align: center; font-size: 2.5rem;">Get Started Today</h2>
-            <form>
-                <input type="text" class="input" placeholder="Your Name" required>
-                <input type="email" class="input" placeholder="Your Email" required>
-                <textarea class="input" placeholder="Your Message" rows="4" required></textarea>
-                <button type="submit" class="button">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <p>© 2024 Intelliai Pro Series | Crafted with precision</p>
-    </footer>
-
-    <script>
-        // Enhanced parallax and scroll effects
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            const scrolled = window.scrollY;
-            
-            // Header effect
-            if (scrolled > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-
-            // Parallax effect for hero content
-            const heroContent = document.querySelector('.hero-content');
-            heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-
-            // Animate floating circles
-            document.querySelectorAll('.circle').forEach((circle, index) => {
-                const speed = 0.1 + (index * 0.05);
-                circle.style.transform = `translate(${Math.sin(scrolled * 0.002) * 30}px, ${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
-            });
-        });
-    </script>
-</body>
-</html>
+ * https://www.reddit.com/r/learnjavascript/comments/1eaplnu/doctype_html_html_langen_head_meta_charsetutf8/
+ * https://github.com/chaos4455/HTML-Projects
+ * https://github.com/KamikottoGG/vladick-present
