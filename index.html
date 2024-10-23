@@ -1,332 +1,135 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intelliai Pro Series | Advanced Solutions Starting at $100/Year</title>
-    <meta name="description" content="Boost your online presence with Intelliai Pro Series. Get an advanced chatbot for $100/year, a business card landing page for $150/year, or both for $200/year.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-    
-    <style>
-        :root {
-            --primary-color: #2D3436;
-            --secondary-color: #0984E3;
-            --accent-color: #00B894;
-            --text-color: #2D3436;
-            --background-color: #F5F6FA;
-            --card-background: #FFFFFF;
-            --gradient-1: linear-gradient(135deg, #0984E3, #00B894);
-            --gradient-2: linear-gradient(135deg, #6C5CE7, #0984E3);
-        }
+import React, { useState, useEffect } from 'react';
+import { ChevronDown, MessageSquare, CreditCard, Package, ArrowRight } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+const ShowcaseSite = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [activeFeature, setActiveFeature] = useState(0);
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
-        }
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-        header {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-            overflow: hidden;
-        }
+  const features = [
+    {
+      title: "Advanced Chatbot",
+      price: "$100/Year",
+      icon: <MessageSquare className="w-8 h-8" />,
+      description: "AI-powered conversation that adapts to your business needs"
+    },
+    {
+      title: "Business Card Landing Page",
+      price: "$150/Year",
+      icon: <CreditCard className="w-8 h-8" />,
+      description: "Your digital presence, elegantly crafted"
+    },
+    {
+      title: "Combo Package",
+      price: "$200/Year",
+      icon: <Package className="w-8 h-8" />,
+      description: "Complete digital solution for your business"
+    }
+  ];
 
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1;
-        }
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white overflow-hidden">
+      {/* Hero Section */}
+      <header className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-slate-900/80 backdrop-blur-lg' : ''}`}>
+        <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+            Intelliai Pro
+          </h1>
+          <button className="px-6 py-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all duration-300">
+            Get Started
+          </button>
+        </nav>
+      </header>
 
-        .header-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-        }
-
-        h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .price-tag {
-            font-size: 1.5rem;
-            color: var(--secondary-color);
-            margin: 1rem 0;
-            animation: pulse 2s infinite;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .feature-card {
-            background: var(--card-background);
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-1);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .cta-button {
-            background: var(--gradient-2);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-top: 2rem;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        #contact-form {
-            background: var(--card-background);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            max-width: 600px;
-            margin: 4rem auto;
-        }
-
-        #contact-form input,
-        #contact-form textarea {
-            width: 100%;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border: 2px solid #eee;
-            border-radius: 10px;
-            transition: border-color 0.3s ease;
-        }
-
-        #contact-form input:focus,
-        #contact-form textarea:focus {
-            border-color: var(--secondary-color);
-            outline: none;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .floating-chat {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--gradient-1);
-            padding: 1rem;
-            border-radius: 50%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            cursor: pointer;
-            z-index: 1000;
-            transition: transform 0.3s ease;
-        }
-
-        .floating-chat:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-                padding: 2rem 1rem;
-            }
-
-            #contact-form {
-                margin: 2rem 1rem;
-                padding: 2rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div id="particles-js"></div>
-        <div class="header-content">
-            <h1>Intelliai Pro Series</h1>
-            <p class="price-tag">Advanced Solutions Starting at $100/Year</p>
-            <p>Transform your online presence with cutting-edge AI solutions</p>
-            <a href="#features" class="cta-button">Explore Solutions</a>
+      {/* Main Hero */}
+      <div className="h-screen flex items-center justify-center relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 pointer-events-none" />
+        <div className="text-center px-6 space-y-8">
+          <h2 className="text-6xl font-bold leading-tight">
+            The Future of
+            <span className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+              Digital Presence
+            </span>
+          </h2>
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+            Elevate your online presence with our cutting-edge solutions
+          </p>
+          <ChevronDown className="w-12 h-12 mx-auto animate-bounce text-slate-400" />
         </div>
-    </header>
+      </div>
 
-    <section id="features" class="features">
-        <div class="feature-card">
-            <h3>Advanced Chatbot</h3>
-            <p class="price-tag">$100/Year</p>
-            <p>Custom AI-powered chatbot with:</p>
-            <ul>
-                <li>24/7 Customer Support</li>
-                <li>Natural Language Processing</li>
-                <li>Custom Knowledge Base</li>
-                <li>Analytics Dashboard</li>
-            </ul>
-            <a href="#contact" class="cta-button">Get Started</a>
+      {/* Features Section */}
+      <section className="max-w-7xl mx-auto px-6 py-24">
+        <div className="grid md:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <Card 
+              key={index}
+              className={`group relative overflow-hidden transition-all duration-500 hover:scale-105 
+                ${index === activeFeature ? 'bg-gradient-to-br from-purple-500/10 to-pink-500/10' : 'bg-slate-800/50'}`}
+              onMouseEnter={() => setActiveFeature(index)}
+            >
+              <CardContent className="p-8 space-y-4">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                <div className="text-purple-400 group-hover:text-purple-300 transition-colors duration-300">
+                  {feature.icon}
+                </div>
+                <h3 className="text-2xl font-bold">{feature.title}</h3>
+                <p className="text-slate-400">{feature.description}</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-xl font-bold text-purple-400">{feature.price}</span>
+                  <ArrowRight className="w-6 h-6 text-slate-400 group-hover:text-purple-400 transform group-hover:translate-x-2 transition-all duration-300" />
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
+      </section>
 
-        <div class="feature-card">
-            <h3>Business Card Landing Page</h3>
-            <p class="price-tag">$150/Year</p>
-            <p>Professional digital presence with:</p>
-            <ul>
-                <li>Responsive Design</li>
-                <li>Custom Domain</li>
-                <li>SEO Optimization</li>
-                <li>Analytics Integration</li>
-            </ul>
-            <a href="#contact" class="cta-button">Get Started</a>
+      {/* Contact Form */}
+      <section className="max-w-2xl mx-auto px-6 py-24">
+        <Card className="bg-slate-800/50 backdrop-blur-lg">
+          <CardContent className="p-8 space-y-6">
+            <h3 className="text-3xl font-bold text-center">Get Started Today</h3>
+            <form className="space-y-4">
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
+              />
+              <textarea
+                placeholder="Your Message"
+                rows={4}
+                className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
+              />
+              <button className="w-full py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all duration-300 font-bold">
+                Send Message
+              </button>
+            </form>
+          </CardContent>
+        </Card>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-slate-800">
+        <div className="max-w-7xl mx-auto px-6 py-12 text-center text-slate-400">
+          <p>© 2024 Intelliai Pro Series | Crafted with precision</p>
         </div>
-
-        <div class="feature-card">
-            <h3>Combo Package</h3>
-            <p class="price-tag">$200/Year</p>
-            <p>Complete digital solution with:</p>
-            <ul>
-                <li>All Chatbot Features</li>
-                <li>All Landing Page Features</li>
-                <li>Priority Support</li>
-                <li>20% Cost Savings</li>
-            </ul>
-            <a href="#contact" class="cta-button">Get Started</a>
-        </div>
-    </section>
-
-    <section id="contact">
-        <form id="contact-form">
-            <h2>Get Started Today</h2>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Tell us about your needs" rows="5" required></textarea>
-            <button type="submit" class="cta-button">Send Message</button>
-        </form>
-    </section>
-
-    <div class="floating-chat" onclick="window.location.href='#contact'">
-        💬
+      </footer>
     </div>
+  );
+};
 
-    <script>
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: '#0984E3' },
-                shape: { type: 'circle' },
-                opacity: { value: 0.5, random: false },
-                size: { value: 3, random: true },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: '#0984E3',
-                    opacity: 0.4,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 6,
-                    direction: 'none',
-                    random: false,
-                    straight: false,
-                    out_mode: 'out',
-                    bounce: false,
-                }
-            },
-            interactivity: {
-                detect_on: 'canvas',
-                events: {
-                    onhover: { enable: true, mode: 'repulse' },
-                    onclick: { enable: true, mode: 'push' },
-                    resize: true
-                },
-            },
-            retina_detect: true
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-    <script defer src="https://app.aminos.ai/js/chat_plugin.js" data-bot-id="33247"></script>
-</body>
-</html>
+export default ShowcaseSite;
