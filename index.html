@@ -1,135 +1,396 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronDown, MessageSquare, CreditCard, Package, ArrowRight } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelliai Pro Series | Modern Solutions</title>
+    <style>
+        :root {
+            --gradient-start: #6366f1;
+            --gradient-end: #ec4899;
+            --background: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.5);
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+        }
 
-const ShowcaseSite = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [activeFeature, setActiveFeature] = useState(0);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+        body {
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.5;
+            overflow-x: hidden;
+            perspective: 2px;
+        }
 
-  const features = [
-    {
-      title: "Advanced Chatbot",
-      price: "$100/Year",
-      icon: <MessageSquare className="w-8 h-8" />,
-      description: "AI-powered conversation that adapts to your business needs"
-    },
-    {
-      title: "Business Card Landing Page",
-      price: "$150/Year",
-      icon: <CreditCard className="w-8 h-8" />,
-      description: "Your digital presence, elegantly crafted"
-    },
-    {
-      title: "Combo Package",
-      price: "$200/Year",
-      icon: <Package className="w-8 h-8" />,
-      description: "Complete digital solution for your business"
-    }
-  ];
+        .parallax-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            transform-style: preserve-3d;
+            z-index: -1;
+        }
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white overflow-hidden">
-      {/* Hero Section */}
-      <header className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-slate-900/80 backdrop-blur-lg' : ''}`}>
-        <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
-            Intelliai Pro
-          </h1>
-          <button className="px-6 py-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all duration-300">
-            Get Started
-          </button>
-        </nav>
-      </header>
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: translateZ(-5px) scale(3.5);
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(30, 41, 59, 0.8) 0%, var(--background) 100%);
+        }
 
-      {/* Main Hero */}
-      <div className="h-screen flex items-center justify-center relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 pointer-events-none" />
-        <div className="text-center px-6 space-y-8">
-          <h2 className="text-6xl font-bold leading-tight">
-            The Future of
-            <span className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
-              Digital Presence
-            </span>
-          </h2>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            Elevate your online presence with our cutting-edge solutions
-          </p>
-          <ChevronDown className="w-12 h-12 mx-auto animate-bounce text-slate-400" />
-        </div>
-      </div>
+        .floating-circles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
 
-      {/* Features Section */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="grid md:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <Card 
-              key={index}
-              className={`group relative overflow-hidden transition-all duration-500 hover:scale-105 
-                ${index === activeFeature ? 'bg-gradient-to-br from-purple-500/10 to-pink-500/10' : 'bg-slate-800/50'}`}
-              onMouseEnter={() => setActiveFeature(index)}
-            >
-              <CardContent className="p-8 space-y-4">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-                <div className="text-purple-400 group-hover:text-purple-300 transition-colors duration-300">
-                  {feature.icon}
-                </div>
-                <h3 className="text-2xl font-bold">{feature.title}</h3>
-                <p className="text-slate-400">{feature.description}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-xl font-bold text-purple-400">{feature.price}</span>
-                  <ArrowRight className="w-6 h-6 text-slate-400 group-hover:text-purple-400 transform group-hover:translate-x-2 transition-all duration-300" />
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            opacity: 0.1;
+            filter: blur(40px);
+            animation: float 20s infinite linear;
+        }
 
-      {/* Contact Form */}
-      <section className="max-w-2xl mx-auto px-6 py-24">
-        <Card className="bg-slate-800/50 backdrop-blur-lg">
-          <CardContent className="p-8 space-y-6">
-            <h3 className="text-3xl font-bold text-center">Get Started Today</h3>
-            <form className="space-y-4">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
-              />
-              <textarea
-                placeholder="Your Message"
-                rows={4}
-                className="w-full px-4 py-3 rounded-lg bg-slate-700/50 border border-slate-600 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all duration-300"
-              />
-              <button className="w-full py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all duration-300 font-bold">
-                Send Message
-              </button>
-            </form>
-          </CardContent>
-        </Card>
-      </section>
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(100px, 100px) rotate(360deg); }
+        }
 
-      {/* Footer */}
-      <footer className="border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-6 py-12 text-center text-slate-400">
-          <p>© 2024 Intelliai Pro Series | Crafted with precision</p>
-        </div>
-      </footer>
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            transition: all 0.3s ease;
+            padding: 1.5rem;
+        }
+
+        .header.scrolled {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: bold;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            transform: translateZ(0.5px) scale(0.8);
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-size: 1.25rem;
+            transform: translateZ(0.25px) scale(0.9);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 8rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-grid {
+            display: grid;
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: 1.5rem;
+            padding: 3rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 12px 48px rgba(99, 102, 241, 0.2);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+            transform-origin: left;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 4rem;
+            height: 4rem;
+            margin-bottom: 2rem;
+            color: var(--gradient-start);
+        }
+
+        .feature-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-price {
+            color: var(--gradient-start);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 2rem;
+        }
+
+        /* Contact Form */
+        .contact {
+            padding: 8rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-card {
+            background: var(--card-bg);
+            border-radius: 1.5rem;
+            padding: 3rem;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0.75rem;
+            color: var(--text);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .input:focus {
+            outline: none;
+            border-color: var(--gradient-start);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+        }
+
+        .button {
+            width: 100%;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.75rem;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Media Queries */
+        @media (min-width: 768px) {
+            .feature-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Background Elements -->
+    <div class="floating-circles">
+        <div class="circle" style="width: 400px; height: 400px; top: 10%; left: 10%;"></div>
+        <div class="circle" style="width: 300px; height: 300px; top: 60%; right: 15%;"></div>
+        <div class="circle" style="width: 200px; height: 200px; top: 30%; right: 30%;"></div>
     </div>
-  );
-};
 
-export default ShowcaseSite;
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">Intelliai Pro</div>
+            <button class="button" style="width: auto;">Get Started</button>
+        </nav>
+    </header>
+
+    <section class="parallax-container">
+        <div class="parallax-bg"></div>
+        <div class="hero">
+            <div class="hero-content">
+                <h1>The Future of Digital Presence</h1>
+                <p>Elevate your online presence with our cutting-edge solutions, designed for the modern digital landscape.</p>
+                <button class="button" style="max-width: 200px;">Explore Features</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-grid">
+            <div class="feature-card">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M8 12h8" />
+                    <path d="M12 8v8" />
+                </svg>
+                <h3 class="feature-title">Advanced Chatbot</h3>
+                <p>AI-powered conversation that adapts to your business needs</p>
+                <div class="feature-price">$100/Year</div>
+            </div>
+
+            <div class="feature-card">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="5" width="20" height="14" rx="2" />
+                    <path d="M2 10h20" />
+                </svg>
+                <h3 class="feature-title">Business Card Page</h3>
+                <p>Your digital presence, elegantly crafted</p>
+                <div class="feature-price">$150/Year</div>
+            </div>
+
+            <div class="feature-card">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                    <path d="M3.27 6.96L12 12.01l8.73-5.05" />
+                    <path d="M12 22.08V12" />
+                </svg>
+                <h3 class="feature-title">Combo Package</h3>
+                <p>Complete digital solution for your business</p>
+                <div class="feature-price">$200/Year</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="form-card">
+            <h2 style="margin-bottom: 2rem; text-align: center; font-size: 2.5rem;">Get Started Today</h2>
+            <form>
+                <input type="text" class="input" placeholder="Your Name" required>
+                <input type="email" class="input" placeholder="Your Email" required>
+                <textarea class="input" placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit" class="button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 Intelliai Pro Series | Crafted with precision</p>
+    </footer>
+
+    <script>
+        // Enhanced parallax and scroll effects
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            const scrolled = window.scrollY;
+            
+            // Header effect
+            if (scrolled > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            // Parallax effect for hero content
+            const heroContent = document.querySelector('.hero-content');
+            heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+
+            // Animate floating circles
+            document.querySelectorAll('.circle').forEach((circle, index) => {
+                const speed = 0.1 + (index * 0.05);
+                circle.style.transform = `translate(${Math.sin(scrolled * 0.002) * 30}px, ${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
+            });
+        });
+    </script>
+</body>
+</html>
