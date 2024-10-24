@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intelliai Pro Series | Advanced Solutions Starting at $100/Year</title>
 
     <!-- Meta Description for SEO -->
@@ -41,8 +41,320 @@
 
     <!-- Inline Critical CSS -->
     <style>
-        /* [Include all the updated CSS from above sections here] */
-        /* For brevity, please refer to the CSS snippets provided above */
+        :root {
+            --primary-color: #2C3E50; /* Deep Blue */
+            --secondary-color: #18BC9C; /* Teal */
+            --accent-color: #E74C3C; /* Coral */
+            --text-color: #2C3E50;
+            --background-color: #ECF0F1;
+            --button-color: var(--secondary-color);
+            --button-text-color: #fff;
+            --header-gradient: linear-gradient(135deg, #2C3E50, #18BC9C);
+            --font-primary: 'Roboto', sans-serif;
+            --font-secondary: 'Montserrat', sans-serif;
+        }
+
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--header-gradient);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-bottom: 5px solid #18BC9C;
+        }
+
+        header picture img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            display: block;
+            loading: lazy;
+        }
+
+        header h1 {
+            font-family: var(--font-secondary);
+            font-size: 3rem;
+            margin: 1rem 0;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        header .highlight {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Main Content Styles */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-out;
+        }
+
+        h2 {
+            font-family: var(--font-secondary);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature img {
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            font-family: var(--font-secondary);
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+        }
+
+        .feature p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Call to Action (CTA) Styles */
+        .cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .cta button {
+            font-family: var(--font-secondary);
+            background-color: var(--button-color);
+            color: var(--button-text-color);
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta button:hover {
+            background-color: #147d76;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Form Styles */
+        #contact-form {
+            background-color: var(--background-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        #contact-form input,
+        #contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        #contact-form input:focus,
+        #contact-form textarea:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+            box-shadow: 0 0 5px rgba(24, 188, 156, 0.5);
+        }
+
+        #contact-form button[type="submit"] {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s, transform 0.3s;
+            display: block;
+            margin: 0 auto;
+            font-size: 1rem;
+        }
+
+        #contact-form button[type="submit"]:hover {
+            background-color: #1a2835;
+            transform: translateY(-2px);
+        }
+
+        /* QR Code Styles */
+        .qr-code {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .qr-code img {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            loading: lazy;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin: 0.5rem 0;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        .footer-link {
+            color: #fff;
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+
+        .footer-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hidden Class */
+        .hidden {
+            display: none;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .features {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .feature {
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .cta button {
+                width: 100%;
+                padding: 0.75rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 
     <!-- Load non-critical JS after page load -->
@@ -68,65 +380,6 @@
                 <div class="feature">
                     <img src="icons/chatbot.svg" alt="Chatbot Icon" width="50" height="50">
                     <h3>Advanced Chatbot - $100/Year</h3>
-                    <p>Developing, maintaining, and hosting of an advanced chatbot tailored to your data, seamlessly integrated into your site.</p>
+                    <p>Development, maintenance, and hosting of an advanced chatbot tailored to your data, seamlessly integrated into your site.</p>
                 </div>
-                <div class="feature">
-                    <img src="icons/landing-page.svg" alt="Landing Page Icon" width="50" height="50">
-                    <h3>Business Card Landing Page - $150/Year</h3>
-                    <p>Developing and maintaining a digital business card-style landing page, meticulously designed using HTML, CSS, and JavaScript.</p>
-                </div>
-                <div class="feature">
-                    <img src="icons/combo.svg" alt="Combo Package Icon" width="50" height="50">
-                    <h3>Combo Package - $200/Year</h3>
-                    <p>Get both the advanced chatbot and the landing page together for a bundled price.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section cta">
-            <h2>Why Choose Intelliai Pro Series?</h2>
-            <p>Affordable annual pricing with comprehensive maintenance and hosting included. Enhance your online presence without breaking the bank.</p>
-            <button onclick="window.location.href='#contact'" aria-label="Get Started Today!">Get Started Today!</button>
-        </section>
-
-        <section id="contact" class="section">
-            <h2>Contact Us</h2>
-            <p>Have questions or want to check development time? Typically, our turnaround is 3 days, but it can vary based on demand. Contact us below to receive an estimated timeline before finalizing your payment.</p>
-
-            <!-- Contact Form -->
-            <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" aria-label="Contact Form">
-                <input type="hidden" name="form-name" value="contact">
-                <p class="hidden">
-                    <label>Don’t fill this out if you're human: <input name="bot-field"></label>
-                </p>
-                <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
-                <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
-                <textarea name="message" placeholder="Your Message" required aria-label="Your Message"></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-
-            <!-- QR Code Image (Now in WebP format) -->
-            <div class="qr-code">
-                <h3>Support Us via PayPal</h3>
-                <picture>
-                    <source srcset="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/ff04667d963c9413c40fb81354f3e5b24c3bf27d/qrcode%20(1).webp" type="image/webp">
-                    <img src="https://raw.githubusercontent.com/Intelliwebchatt/Intiaprolivecopy/main/fallback-qrcode.png" alt="Support Us via PayPal QR Code" width="200" height="200" loading="lazy">
-                </picture>
-            </div>
-        </section>
-
-        <footer>
-            <div class="footer-content">
-                <p>© 2024 Intelliai Pro Series</p>
-                <div class="social-icons">
-                    <a href="https://facebook.com" aria-label="Facebook"><img src="icons/facebook.svg" alt="Facebook" width="24" height="24"></a>
-                    <a href="https://twitter.com" aria-label="Twitter"><img src="icons/twitter.svg" alt="Twitter" width="24" height="24"></a>
-                    <a href="https://linkedin.com" aria-label="LinkedIn"><img src="icons/linkedin.svg" alt="LinkedIn" width="24" height="24"></a>
-                </div>
-                <p><a href="#" class="footer-link">Privacy Policy</a></p>
-            </div>
-        </footer>
-    </main>
-</body>
-
-</html>
+                <div class="feature
