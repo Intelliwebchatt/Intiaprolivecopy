@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Intelliai Pro Series</title>
+    <meta name="description" content="Contact Intelliai Pro Series for inquiries, support, or to get started with our advanced digital solutions.">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Intelliai Pro Series Logo" width="150" height="50">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active cta-button">Get Started</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section contact">
+            <h1>Contact Us</h1>
+            <p>Have questions or need a customized solution? Our dedicated team typically delivers projects within 3 days, depending on demand. Reach out below to receive a personalized timeline and discover how Intelliai Pro Series can transform your online presence.</p>
+
+            <!-- Contact Form -->
+            <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact">
+                <p class="hidden">
+                    <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+                </p>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+
+            <!-- QR Code Image -->
+            <div class="qr-code">
+                <h3>Support Us via PayPal</h3>
+                <picture>
+                    <source srcset="images/qrcode.webp" type="image/webp">
+                    <img src="images/qrcode.png" alt="Support Us via PayPal QR Code" loading="lazy">
+                </picture>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Intelliai Pro Series | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+    </footer>
+
+    <!-- External JS -->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
