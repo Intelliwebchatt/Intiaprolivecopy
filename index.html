@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- Corrected Viewport Meta Tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Intelliai Pro Series | Advanced Solutions Starting at $100/Year</title>
 
@@ -49,7 +50,9 @@
             --text-color: #333333; /* Dark Charcoal */
             --accent-color: #8E44AD; /* Electric Purple */
             --success-color: #3EB489; /* Mint Green */
-            /* Additional colors for hover states, borders, etc. */
+            --button-color: #cc6600; /* Improved contrast for buttons */
+            --button-text-color: #fff; /* White button text for contrast */
+            --header-gradient: linear-gradient(135deg, #003366, #001f4d); /* Darker gradient for better contrast */
         }
 
         /* Global Box-Sizing */
@@ -157,6 +160,12 @@
             border-radius: 8px;
             text-align: center;
             background-color: white; /* Ensure background doesn't cause overflow */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .feature h3 {
@@ -177,12 +186,13 @@
             border-radius: 8px;
             font-size: 1.2rem;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .cta button:hover {
             background-color: #b35900;
+            transform: scale(1.05);
         }
 
         #contact-form {
@@ -202,18 +212,20 @@
             border-radius: 4px;
             color: #333;
             margin-bottom: 0.75rem;
+            font-size: 1rem;
         }
 
         #contact-form button[type="submit"] {
             background-color: var(--primary-color);
             color: white;
             border: none;
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.5rem;
             cursor: pointer;
             border-radius: 4px;
             transition: background-color 0.3s;
             display: block;
             margin: 0 auto;
+            font-size: 1rem;
         }
 
         #contact-form button[type="submit"]:hover {
@@ -241,6 +253,15 @@
             margin-top: 2rem;
         }
 
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        footer a:hover {
+            text-decoration: none;
+        }
+
         .hidden {
             display: none;
         }
@@ -251,8 +272,8 @@
             }
 
             .feature {
-                margin-bottom: 1rem;
                 flex: 1 1 100%;
+                margin-bottom: 1rem;
             }
 
             header h1 {
@@ -261,6 +282,11 @@
 
             header p {
                 font-size: 1rem;
+            }
+
+            .cta button {
+                width: 100%;
+                padding: 0.75rem;
             }
         }
     </style>
@@ -333,10 +359,28 @@
             </div>
         </section>
 
-        <footer>
-            <p>© 2024 Intelliai Pro Series | <a href="#" style="color: white; text-decoration: underline;">Privacy Policy</a></p>
-        </footer>
+        <section class="section">
+            <h2>Educational Resources</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>AI Chatbot Essentials</h3>
+                    <p>Learn the fundamentals of AI chatbots and how they can revolutionize your customer interactions.</p>
+                </div>
+                <div class="feature">
+                    <h3>Optimizing Your Online Presence</h3>
+                    <p>Discover strategies to enhance your digital footprint and attract more visitors to your website.</p>
+                </div>
+                <div class="feature">
+                    <h3>Web Development Best Practices</h3>
+                    <p>Stay updated with the latest trends and best practices in web development to keep your site ahead.</p>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <p>© 2024 Intelliai Pro Series | <a href="#">Privacy Policy</a></p>
+    </footer>
 </body>
 
 </html>
